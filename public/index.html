@@ -89,7 +89,9 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
     <script>
-      const socket = io({ transports: ['polling', 'websocket'] });
+      const socket = io(window.location.origin, { transports: ['polling', 'websocket'] });
+
+
       let peer;
       let localStream;
       let currentCall;
